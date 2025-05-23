@@ -1,10 +1,10 @@
 { lib, ... }:
 {
-  options.system.boot.loader.systemd.enable = lib.mkOption {
+  options.system.cpu.microcode.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
     description = ''
-      Whether to enable systemd.
+      Whether to enable microcode.
     '';
   };
 }

@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  options.boot.loader.efi.can_touch_efi_variables = lib.mkOption {
+  options.system.boot.loader.efi.can_touch_efi_variables = lib.mkOption {
     type = lib.types.bool;
     default = true;
     description = ''

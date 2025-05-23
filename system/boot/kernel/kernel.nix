@@ -1,6 +1,6 @@
 { config, ... }:
 {
   config = {
-    boot.kernelPackages = config.boot.kernel.kernel_package;
+    boot.kernelPackages = config.system.boot.kernel.kernel_package;
   };
 }

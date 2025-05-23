@@ -1,6 +1,6 @@
 { lib, pkgs, ... }:
 {
-  options.boot.kernel.package = lib.mkOption {
+  options.system.boot.kernel.package = lib.mkOption {
     type = lib.types.attrs;
     default = pkgs.linuxPackages_latest;
     description = ''
