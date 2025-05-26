@@ -1,3 +1,4 @@
+# import-all-recursive-list.nix
 dir:
 
 let
@@ -5,18 +6,20 @@ let
 
   collectImports = relPath:
     let
-      fullPath = dir + (if relPath == "" then "" else "/${relPath}");
+      # Use actual path typing instead of string concat
+      fullPath = if relPath == "" then dir else dir + "/${relPath}";
       entries = readDir fullPath;
 
       processEntry = name:
         let
           subRelPath = if relPath == "" then name else "${relPath}/${name}";
+          entryPath = dir + "/${subRelPath}";
           entryType = entries.${name};
         in
         if entryType == "directory" then
           collectImports subRelPath
         else if entryType == "regular" && match ".*\\.nix" name != null then
-          [ (import (dir + "/${subRelPath}")) ]
+          [ (import entryPath) ]
         else
           [ ];
     in
