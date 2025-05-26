@@ -1,29 +1,26 @@
-# import-all-recursive-list.nix
-dir:
+{ dir }:
 
 let
   inherit (builtins) readDir attrNames filter match concatLists;
 
-  collectImports = relPath:
+  collectImports = dirPath:
     let
-      # Use actual path typing instead of string concat
-      fullPath = if relPath == "" then dir else dir + "/${relPath}";
-      entries = readDir fullPath;
-
-      processEntry = name:
+      entries = readDir dirPath;
+    in
+    concatLists (map
+      (name:
         let
-          subRelPath = if relPath == "" then name else "${relPath}/${name}";
-          entryPath = dir + "/${subRelPath}";
+          fullPath = dirPath + "/${name}";
           entryType = entries.${name};
         in
         if entryType == "directory" then
-          collectImports subRelPath
+          collectImports fullPath
         else if entryType == "regular" && match ".*\\.nix" name != null then
-          [ (import entryPath) ]
+          [ (import fullPath) ]
         else
-          [ ];
-    in
-    concatLists (map processEntry (attrNames entries));
+          [ ]
+      )
+      (attrNames entries));
 
 in
-collectImports ""
+collectImports dir
