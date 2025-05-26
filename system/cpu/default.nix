@@ -1,0 +1,7 @@
+{ ... }:
+{
+  imports = [
+    ./vendor.nix
+    ./microcode
+  ];
+}
