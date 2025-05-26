@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  options.system.keyboard.keymap.layout = lib.mkOption {
+  options.system.keyboard.keymap.variant = lib.mkOption {
     type = lib.types.str;
     default = "";
     description = ''
