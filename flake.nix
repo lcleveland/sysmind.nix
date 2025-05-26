@@ -2,7 +2,7 @@
   description = "A NixOS configuration for sysmind.nix";
   outputs = { self, nixpkgs, home_manager, nixos_hardware }@inputs:
     let
-      import_modules = ./resources/nix/import_modules.nix;
+      import_modules = import ./resources/nix/import_modules.nix;
       base_modules = import_modules ./system ++ [ home_manager.nixosModules.home-manager ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
         modules = base_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
