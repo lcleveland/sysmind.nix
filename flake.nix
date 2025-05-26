@@ -3,7 +3,7 @@
   outputs = { self, nixpkgs, home_manager, nixos_hardware }@inputs:
     let
       import_modules = import ./resources/nix/import_modules.nix;
-      base_modules = import_modules ./system ++ [ home_manager.nixosModules.home-manager ];
+      base_modules = import_modules ./system ++ [ home_manager.nixosModules.home-manager /etc/nixos/hardware-configuration.nix ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
         modules = base_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
