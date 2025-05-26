@@ -11,7 +11,9 @@
       };
     in
     {
-      nixosConfigurations = { };
+      nixosConfigurations = {
+        fw16 = make_framework_16;
+      };
     };
   inputs = {
     home_manager = {
