@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./can_touch_efi_vars.nix
+    ./can_touch_efi_variables.nix
     ./efi.nix
   ];
 }
