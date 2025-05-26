@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  config = lib.mkIf (config.system.networking.network_manager.enable) {
+  config = lib.mkIf (config.system.network.network_manager.enable) {
     networking.networkmanager.enable = true;
   };
 }
