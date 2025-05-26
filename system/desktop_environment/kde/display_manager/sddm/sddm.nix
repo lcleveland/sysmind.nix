@@ -4,7 +4,7 @@ let
 in
 {
   config = lib.mkIf (desktop_environment.enable && desktop_environment.enabled_environment == "kde" && desktop_environment.kde.display_manager.sddm.enable) {
-    services.display-manager.sddm = {
+    services.displayManager.sddm = {
       enable = true;
       wayland.enable = desktop_environment.kde.display_manager.sddm.wayland;
     };
