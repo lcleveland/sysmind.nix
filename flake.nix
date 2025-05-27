@@ -25,5 +25,8 @@
     nixpkgs = {
       url = "github:nixos/nixpkgs?ref=25.05";
     };
+    sysmind_users = {
+      url = "github:lcleveland/systmind.users";
+    };
   };
 }
