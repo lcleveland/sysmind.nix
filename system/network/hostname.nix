@@ -1,7 +1,7 @@
 { lib, ... }: {
   options.system.network.hostname = lib.mkOption {
     type = lib.types.str;
-    default = "nixos";
+    default = "sysmind";
     description = ''
       The hostname of the system.
     '';
