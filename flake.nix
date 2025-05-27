@@ -1,6 +1,6 @@
 {
   description = "A NixOS configuration for sysmind.nix";
-  outputs = { self, nixpkgs, home_manager, nixos_hardware }@inputs:
+  outputs = { self, nixpkgs, home_manager, nixos_hardware, sysmind_users }@inputs:
     let
       import_modules = import ./resources/nix/import_modules.nix;
       base_modules = import_modules ./system ++ [ home_manager.nixosModules.home-manager /etc/nixos/hardware-configuration.nix ];
