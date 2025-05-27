@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 {
   config = lib.mkIf config.system.application.libvirt.enable {
     boot.extraModprobeConfig = "options kvm_intel nested=1";
