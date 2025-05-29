@@ -3,6 +3,9 @@ let
   mineral = config.nix-mineral;
 in
 {
+  inports = [
+    "${inputs.nix_mineral}/nix-mineral.nix"
+  ];
   config = {
     mineral.overrides = {
       desktop = {
