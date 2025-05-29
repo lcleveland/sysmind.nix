@@ -3,6 +3,16 @@ let
   language = config.system.language;
 in
 {
+  options.system.language = {
+    locale = lib.mkOption {
+      type = lib.types.str;
+      default = "en_US.UTF-8";
+      description = ''
+          The locale to use.
+        '';
+    };
+  };
+
   config = {
     i18n = {
       defaultLocale = language.locale;
