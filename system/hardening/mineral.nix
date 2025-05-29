@@ -4,7 +4,7 @@
     "${inputs.nix_mineral}/nix-mineral.nix"
   ];
   config = {
-    nix-mineral.overrides = {
+    config.nix-mineral.overrides = {
       desktop = {
         home-exec.enable = true;
         var-lib-exec.enable = true;
