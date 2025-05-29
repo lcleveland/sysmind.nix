@@ -4,7 +4,7 @@ let
 in
 {
   options.system.boot.loader.systemd = {
-    enable = lib.mkoption {
+    enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = ''
