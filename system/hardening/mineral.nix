@@ -7,6 +7,10 @@
     nix-mineral = {
       enable = true;
       overrides = {
+        compatibility = {
+          allow-unsigned-modules = true;
+          no-lockdown = true;
+        };
         desktop = {
           home-exec = true;
           var-lib-exec = true;
