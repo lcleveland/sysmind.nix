@@ -2,7 +2,7 @@
 {
   imports = [ "${inputs.nix_mineral}/nix-mineral.nix" ];
   config = {
-    inputs.nix_mineral.nm-overrides = {
+    nix-mineral.nm-overrides = {
       desktop = {
         home-exec.enable = true;
         var-lib-exec.enable = true;
