@@ -9,6 +9,7 @@
       overrides = {
         compatibility = {
           allow-unsigned-modules = true;
+          allow-multilib = true;
           no-lockdown = true;
         };
         desktop = {
