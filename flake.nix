@@ -1,6 +1,6 @@
 {
   description = "A NixOS configuration for sysmind.nix";
-  outputs = { self, nixpkgs, home_manager, nix_mineral, nixos_hardware, sysmind_users }@base_inputs:
+  outputs = { self, nixpkgs, home_manager, nixos_hardware, sysmind_users }@base_inputs:
     let
       inputs = base_inputs // sysmind_users.inputs;
       import_modules = import ./resources/nix/import_modules.nix;
