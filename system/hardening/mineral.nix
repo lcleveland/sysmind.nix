@@ -1,10 +1,7 @@
 { config, inputs, lib, pkgs, ... }:
 {
-  imports = [
-    "${inputs.nix_mineral}/nix-mineral.nix"
-  ];
   config = {
-    nix_mineral.nix-mineral.overrides = {
+    inputs.nix_mineral.nix-mineral.overrides = {
       desktop = {
         home-exec.enable = true;
         var-lib-exec.enable = true;
