@@ -1,7 +1,10 @@
 { config, inputs, lib, pkgs, ... }:
+let
+  mineral = inputs.nix_mineral.nix-mineral;
+in
 {
   config = {
-    inputs.nix_mineral.nix-mineral.overrides = {
+    mineral.overrides = {
       desktop = {
         home-exec.enable = true;
         var-lib-exec.enable = true;
