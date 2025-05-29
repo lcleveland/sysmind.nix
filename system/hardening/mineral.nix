@@ -3,7 +3,7 @@ let
   mineral = config.nix-mineral;
 in
 {
-  inports = [
+  imports = [
     "${inputs.nix_mineral}/nix-mineral.nix"
   ];
   config = {
