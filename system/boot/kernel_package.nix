@@ -1,4 +1,7 @@
-{ lib, pkgs, ... }:
+{ config, lib, ... }:
+let
+  kernel = config.system.boot.kernel;
+in
 {
   options.system.boot.kernel.kernel_package = lib.mkOption {
     type = lib.types.attrs;
@@ -6,5 +9,9 @@
     description = ''
       The kernel package to use.
     '';
+  };
+
+  config = {
+    boot.kernelPackages = kernel.kernel_package;
   };
 }
