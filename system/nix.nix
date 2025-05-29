@@ -62,8 +62,8 @@ in
         '';
       };
       options = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = [ "delete-older-than" "30d" ];
+        type = lib.types.str;
+        default = "--delete-older-than 7d";
         description = ''
           The options to pass to nix-store --optimize.
         '';
