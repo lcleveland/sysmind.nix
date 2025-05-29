@@ -2,9 +2,10 @@
 {
   options.system.time.time_zone = lib.mkOption {
     type = lib.types.str;
-    default = "America/New_York";
+    default = "America/Chicago";
     description = ''
       The time zone.
     '';
   };
 }
+
