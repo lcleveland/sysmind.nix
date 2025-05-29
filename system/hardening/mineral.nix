@@ -14,6 +14,7 @@
         desktop = {
           allow-multilib = true;
           home-exec = true;
+          tmp-exec = true;
           var-lib-exec = true;
           disable-usbguard = true;
         };
