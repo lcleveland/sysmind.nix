@@ -20,6 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager?ref=release-25.05";
     };
+    nix_mineral = {
+      url = "github:cynicsketch/nix-mineral";
+      flake = false;
+    };
     nixos_hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
