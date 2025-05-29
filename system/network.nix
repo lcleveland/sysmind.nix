@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   network = config.system.network;
 in
