@@ -4,7 +4,13 @@ let
 in
 {
   options.system.boot.loader.systemd = {
-    enable = lib.mkEnableOption "systemd";
+    enable = lib.mkoption {
+      type = lib.types.bool;
+      default = true;
+      description = ''
+        Whether to enable systemd-boot.
+      '';
+    };
   };
 
   config = lib.mkIf loader.systemd.enable {
