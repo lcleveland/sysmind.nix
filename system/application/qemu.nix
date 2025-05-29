@@ -1,6 +1,13 @@
 { config, lib, pkgs, ... }:
+let
+  application = config.system.application;
+in
 {
-  config = lib.mkIf config.system.application.qemu.enable {
+  options.system.application.qemu = {
+    enable = lib.mkEnableOption "qemu";
+  };
+
+  config = lib.mkIf application.qemu.enable {
     environment.systemPackages = [
       pkgs.qemu
       (pkgs.writeShellScriptBin "qemu-system-x86_64-uefi" ''
