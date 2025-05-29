@@ -9,10 +9,10 @@
       overrides = {
         compatibility = {
           allow-unsigned-modules = true;
-          allow-multilib = true;
           no-lockdown = true;
         };
         desktop = {
+          allow-multilib = true;
           home-exec = true;
           var-lib-exec = true;
           disable-usbguard = true;
