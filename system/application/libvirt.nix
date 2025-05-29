@@ -1,6 +1,13 @@
 { config, lib, pkgs, ... }:
+let
+  application = config.system.application;
+in
 {
-  config = lib.mkIf config.system.application.libvirt.enable {
+  options.system.application.libvirt = {
+    enable = lib.mkEnableOption "libvirt";
+  };
+
+  config = lib.mkIf application.libvirt.enable {
     boot.extraModprobeConfig = "options kvm_intel nested=1";
     programs.virt-manager.enable = true;
     environment.systemPackages = with pkgs; [
