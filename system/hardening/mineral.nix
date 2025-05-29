@@ -1,6 +1,6 @@
 { config, inputs, lib, pkgs, ... }:
 let
-  mineral = inputs.nix_mineral.nix-mineral;
+  mineral = config.nix-mineral;
 in
 {
   config = {
