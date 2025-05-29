@@ -4,7 +4,13 @@ let
 in
 {
   options.system.application.libvirt = {
-    enable = lib.mkEnableOption "libvirt";
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = ''
+        Whether to enable libvirt.
+      '';
+    };
   };
 
   config = lib.mkIf application.libvirt.enable {

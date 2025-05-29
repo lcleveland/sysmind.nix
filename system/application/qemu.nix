@@ -4,7 +4,13 @@ let
 in
 {
   options.system.application.qemu = {
-    enable = lib.mkEnableOption "qemu";
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = ''
+        Whether to enable qemu.
+      '';
+    };
   };
 
   config = lib.mkIf application.qemu.enable {
