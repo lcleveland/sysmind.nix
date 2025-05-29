@@ -55,8 +55,8 @@ in
         '';
       };
       dates = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = [ "daily" "weekly" "monthly" ];
+        type = lib.types.str;
+        default = "weekly";
         description = ''
           The dates to garbage collect.
         '';
