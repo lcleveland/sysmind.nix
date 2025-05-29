@@ -8,12 +8,12 @@
       enable = true;
       overrides = {
         desktop = {
-          home-exec.enable = true;
-          var-lib-exec.enable = true;
-          usbguard-disable.enable = true;
+          home-exec = true;
+          var-lib-exec = true;
+          disable-usbguard = true;
         };
         security = {
-          disable-intelme-kmodules.enable = true;
+          disable-intelme-kmodules = true;
         };
       };
     };
