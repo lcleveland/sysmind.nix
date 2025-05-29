@@ -14,6 +14,6 @@ in
   };
 
   config = {
-    users.mutable_users = account.mutable_users;
+    users.mutableUsers = account.mutable_users;
   };
 }
