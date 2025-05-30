@@ -1,5 +1,5 @@
 {
-  description = "A NixOS configuration for sysmind.nix";
+  description = "A NixOS configuration targeted at Framework laptops";
   outputs = { self, nixpkgs, home_manager, niri, nixos_hardware, sysmind_users }@base_inputs:
     let
       inputs = base_inputs // sysmind_users.inputs;
