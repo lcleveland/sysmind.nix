@@ -7,6 +7,7 @@
       base_modules = import_modules ./system ++ sysmind_users.nixosModules.default ++ [
         home_manager.nixosModules.home-manager
         niri.nixosModules.niri
+        niri.homeModules.niri
         /etc/nixos/hardware-configuration.nix
       ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
