@@ -7,7 +7,10 @@ in
     environment.systemPackages = [
       pkgs.catppuccin-sddm
     ];
-    programs.niri.enable = true;
+    programs = {
+      niri.enable = true;
+      waybar.enable = true;
+    };
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
