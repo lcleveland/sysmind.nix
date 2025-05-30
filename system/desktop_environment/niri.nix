@@ -4,9 +4,16 @@ let
 in
 {
   config = lib.mkIf (desktop_environment.enable && desktop_environment.enabled_environment == "niri") {
-    environment.systemPackages = [
-      pkgs.catppuccin-sddm
-      pkgs.font-awesome
+    environment.systemPackages = with pkgs;[
+      catppuccin-sddm
+      font-awesome
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      liberation_ttf
+      nerdfonts
+      roboto-mono
+      font-awesome
     ];
     programs = {
       niri.enable = true;
