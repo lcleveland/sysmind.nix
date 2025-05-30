@@ -11,7 +11,7 @@ in
       noto-fonts-cjk-sans
       noto-fonts-emoji
       liberation_ttf
-      nerdfonts
+      nerdfonts.fira-code
       roboto-mono
       font-awesome
     ];
