@@ -12,6 +12,7 @@ in
       noto-fonts-emoji
       liberation_ttf
       nerd-fonts.fira-code
+      nerd-fonts.hack
       roboto-mono
       font-awesome
     ];
