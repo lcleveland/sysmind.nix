@@ -6,6 +6,7 @@ in
   config = lib.mkIf (desktop_environment.enable && desktop_environment.enabled_environment == "niri") {
     environment.systemPackages = [
       pkgs.catppuccin-sddm
+      pkgs.font-awesome
     ];
     programs = {
       niri.enable = true;
