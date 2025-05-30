@@ -5,13 +5,13 @@ in
 {
   config = lib.mkIf (desktop_environment.enable && desktop_environment.enabled_environment == "niri") {
     environment.systemPackages = [
-      pkgs.elegant-sddm
+      pkgs.catppuccin-sddm
     ];
     programs.niri.enable = true;
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "Elegant";
+      theme = "catppuccin-mocha";
     };
   };
 }
