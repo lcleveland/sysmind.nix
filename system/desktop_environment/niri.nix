@@ -4,6 +4,9 @@ let
 in
 {
   config = lib.mkIf (desktop_environment.enable && desktop_environment.enabled_environment == "niri") {
+    environment.systemPackages = [
+      pkgs.elegant-sddm
+    ];
     programs.niri.enable = true;
     services.displayManager.sddm = {
       enable = true;
