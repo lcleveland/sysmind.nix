@@ -1,12 +1,11 @@
 {
   description = "A NixOS configuration targeted at Framework laptops";
-  outputs = { self, nixpkgs, home_manager, hyprpanel, niri, nixos_hardware, sysmind_users }@base_inputs:
+  outputs = { self, nixpkgs, home_manager, niri, nixos_hardware, sysmind_users }@base_inputs:
     let
       inputs = base_inputs // sysmind_users.inputs;
       import_modules = import ./resources/nix/import_modules.nix;
       base_modules = import_modules ./system ++ sysmind_users.nixosModules.default ++ [
         home_manager.nixosModules.home-manager
-        { nixpkgs.overlays = [ hyprpanel.overlay ]; }
         niri.nixosModules.niri
         /etc/nixos/hardware-configuration.nix
       ];
@@ -24,10 +23,6 @@
     home_manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager?ref=release-25.05";
-    };
-    hyprpanel = {
-      url = "github:jas-singhfsu/hyprpanel";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
       url = "github:sodiboo/niri-flake";
