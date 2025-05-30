@@ -6,7 +6,7 @@
       import_modules = import ./resources/nix/import_modules.nix;
       base_modules = import_modules ./system ++ sysmind_users.nixosModules.default ++ [
         home_manager.nixosModules.home-manager
-        hyprpanel.homeManagerModules.hyprpanel
+        { nixpkgs.overlays = [ hyprpanel.overlay ]; }
         niri.nixosModules.niri
         /etc/nixos/hardware-configuration.nix
       ];
