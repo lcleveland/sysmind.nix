@@ -1,6 +1,6 @@
 {
   description = "A NixOS configuration for sysmind.nix";
-  outputs = { self, nixpkgs, home_manager, nixos_hardware, sysmind_users }@base_inputs:
+  outputs = { self, nixpkgs, home_manager, niri, nixos_hardware, sysmind_users }@base_inputs:
     let
       inputs = base_inputs // sysmind_users.inputs;
       import_modules = import ./resources/nix/import_modules.nix;
@@ -19,6 +19,10 @@
     home_manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager?ref=release-25.05";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos_hardware = {
       url = "github:NixOS/nixos-hardware/master";
